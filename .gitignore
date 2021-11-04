@@ -1,0 +1,5 @@
+# Objetos c++
+*.o
+
+# Carpeta generada por doxyfile
+/DOC
