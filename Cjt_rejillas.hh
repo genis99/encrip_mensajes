@@ -20,7 +20,7 @@ using namespace std;
     Descripcion del tipo: representa un conjunto de rejillas ordenado por su identificador
 */
 
-class Cjt_rejillas {Cjt_patrones.leer();
+class Cjt_rejillas {
     
 private:
     int nr;
@@ -54,7 +54,7 @@ public:
         \pre cierto
         \post añade al conjunto con idr del numero actual de rejillas
     */
-    void anadir_rejilla(Rejilla& r);
+    void nueva_rejilla(Rejilla& r);
     
     // Lectura y escriptura
     

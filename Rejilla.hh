@@ -7,7 +7,6 @@
 #ifndef NO_DIAGRAM
 #include <iostream>
 #include <vector>
-#include "ParInt.hh"
 #endif
 using namespace std;
 
@@ -26,7 +25,7 @@ class Rejilla {
     
 private:
     int n, k;
-    vector<vector<ParInt>> huecos; // 0, 90, 180 y 270 grados
+    vector<vector<pair<int,int>>> huecos; // 0, 90, 180 y 270 grados
     bool valida;
     
     /** @brief Añade los huecos girados a partir del original 
@@ -34,7 +33,7 @@ private:
         \pre cierto
         \post se ha rellenado el vector de huecos del parametro implicito a partir del original
     */
-    void insertar_huecos(const vector<ParInt>& original);
+    void insertar_huecos(const vector<pair<int,int>>& original);
     
     /** @brief Calcula la validez de la rejilla.
 
@@ -76,13 +75,13 @@ public:
     */
     int consultar_k() const;
     
-    /** @brief Consulta el vector de huecos, segun el numero de veces que se ha girado
-
-        \pre cierto
-        \post el resultado es el vector de huecos (del giro indicado: 0 sin girar,
-        1 1er giro-> 90º, 2 -> 180Cjt_patrones.leer();º, 3 -> 270º) del parametro implicito
-    */
-    vector<ParInt> consultar_huecos(int giro) const; // TODO això desvela la implementació de la classe
+//     /** @brief Consulta el vector de huecos, segun el numero de veces que se ha girado
+// 
+//         \pre cierto
+//         \post el resultado es el vector de huecos (del giro indicado: 0 sin girar,
+//         1 1er giro-> 90º, 2 -> 180Cjt_patrones.leer();º, 3 -> 270º) del parametro implicito
+//     */
+//     vector<pair<int,int>> consultar_huecos(int giro) const; // TODO això desvela la implementació de la classe
     
     /** @brief Consulta si la rejilla es valida
 

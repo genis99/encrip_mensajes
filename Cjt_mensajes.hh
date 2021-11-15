@@ -45,14 +45,6 @@ public:
 
     // Modificadores
     
-    /** @brief Añade un mensaje al conjunto 
-
-        \pre cierto
-        \post si el identificador del mensaje ya estaba en el conjunto muestra un error
-        y si no lo añade al conjunto
-    */
-    void nuevo_mensaje(string idm, string m);
-    
     /** @brief Borra un mensaje del conjunto 
 
         \pre cierto
@@ -63,13 +55,14 @@ public:
 
     // Lectura y escriptura
     
-    /** @brief Lee un mensaje y lo añade al conjunto
+    /** @brief Lee el idm y el mensaje y lo añade al conjunto 
 
-        \pre hay preparado en el canal estandard d'entrada un string que el identificador
+        \pre hay preparado en el canal estandard d'entrada un string que representa el identificador
         de mensaje y un string que representa el contenido del mensaje
-        \post se ha añadido al conjunto el mensaje
+        \post si el identificador del mensaje ya estaba en el conjunto muestra un error
+        y si no lo añade al conjunto
     */
-    void leer_mensaje();
+    void nuevo_mensaje();
     
     /** @brief Lee unos cuantos mensajes y los añade al conjunto 
 

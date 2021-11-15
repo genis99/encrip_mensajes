@@ -6,8 +6,8 @@ Rejilla::Rejilla() {
     valida = false;
 }
 
-void Rejilla::insertar_huecos(const vector<ParInt>& original) {
-    ParInt p;
+void Rejilla::insertar_huecos(const vector<pair<int,int>>& original) {
+    pair<int,int> p;
     p = original[0];
 }
 
@@ -20,12 +20,6 @@ int Rejilla::consultar_n() const {
 
 int Rejilla::consultar_k() const {
     return k;
-}
-
-vector< ParInt > Rejilla::consultar_huecos(int giro) const {
-    giro++;
-    vector< ParInt > s;
-    return s;
 }
 
 bool Rejilla::es_valida() const {

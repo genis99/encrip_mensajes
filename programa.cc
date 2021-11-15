@@ -31,15 +31,13 @@ int main ()
     cin >> comando;
     while (comando != "fin") {
         if (comando = "nuevo_mensaje") {
-            string idm, mensaje;
-            cin >> idm >> mensaje;
-            Cjt_mensajes.nuevo_mensaje(idm, mensaje);
+            Cjt_mensajes.nuevo_mensaje();
         }
         else if (comando = "nueva_rejilla") {
-            Cjt_rejillas.leer();
+            Cjt_rejillas.nueva_rejilla();
         }
         else if (comando = "nuevo_patron") {
-            Cjt_patrones.leer();
+            Cjt_patrones.nuevo_patron();
         }
         else if (comando = "borrar_mensaje") {
             string idm;

@@ -49,15 +49,16 @@ public:
     
     // Modificadores
     
-    /** @brief Añade un patron al conjunto 
-
-        \pre cierto
-        \post si el identificador del patron ya estaba en el conjunto muestra un error
-        y si no lo añade al conjunto
-    */
-    void anadir_patron(Patron& p);
     
     // Lectura y escriptura
+    
+    /** @brief Añade un patron al conjunto 
+
+        \pre hay preparado en el canal estandard d'entrada un entero que representa la
+        dimension del patrondel mensaje y un string que representa el contenido del mensaje
+        \post añade el patron al conjunto y se escribe el numero de patrones en el conjunto
+    */
+    void nuevo_patron();
     
     /** @brief Lee unos cuantos patrones y los añade al conjunto 
 
