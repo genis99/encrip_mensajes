@@ -17,7 +17,7 @@ using namespace std;
     Descripcion del tipo: contiene el id. de rejilla idr, la dimension n y los huecos k de las rejillas de
     0, 90, 180 y 270 grados. n y k son enteros y los huecos son vectores de pares de enteros.
     Las dimensiones validas son numeros pares y el numero de huecos validos son del tipo
-    k = n²/ 4 . La validez se indica en el atributo es_valida
+    k = n²/ 4 .
     
 */
 class Rejilla {
@@ -26,7 +26,7 @@ class Rejilla {
 private:
     int n, k;
     vector<vector<pair<int,int>>> huecos; // 0, 90, 180 y 270 grados
-    bool valida;
+//     bool valida; TODO borrar
     
     /** @brief Añade los huecos girados a partir del original 
 
@@ -45,9 +45,9 @@ private:
     /** @brief Calcula la validez de la rejilla.
 
         \pre cierto
-        \post el atributo es_valida indica si el parametro implicito es una rejilla valida
+        \post indica si el parametro implicito es una rejilla valida o no
     */
-    void calcular_validez(); 
+    bool calcular_validez(); 
     
     
 public:
@@ -82,23 +82,6 @@ public:
     */
     int consultar_k() const;
     
-//     /** @brief Consulta el vector de huecos, segun el numero de veces que se ha girado
-// 
-//         \pre cierto
-//         \post el resultado es el vector de huecos (del giro indicado: 0 sin girar,
-//         1 1er giro-> 90º, 2 -> 180Cjt_patrones.leer();º, 3 -> 270º) del parametro implicito
-//     */
-//     vector<pair<int,int>> consultar_huecos(int giro) const; // TODO això desvela la implementació de la classe
-    
-    /** @brief Consulta si la rejilla es valida
-
-        \pre cierto
-        \post el resultado nos dice si la rejilla es valida o no
-    */
-    bool es_valida() const;
-    /* Pre: cierto  */
-    /* Post: el resultado nos dice si la rejilla es valida o no */
-    
     // Lectura y escriptura
     
     /** @brief Lee una rejilla
@@ -106,9 +89,10 @@ public:
         \pre hay preparados en el canal estandard d'entrada dos enteros n,k y 
         una secuencia de posiciones(pares de enteros) de long k
         \post el parametro implicito pasa a tener los atributos leidos del canal
-        estandar de entrada y tambien los giros de la rejilla y si es valida o no
+        estandar de entrada y tambien los giros de la rejilla y si devuelve
+        un booleano que indica si la rejilla es valida o no
     */
-    void leer();
+    bool leer();
     
     /** @brief Lee una rejilla
 

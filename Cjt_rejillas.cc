@@ -9,10 +9,22 @@ Rejilla Cjt_rejillas::consultar_rejilla_idr(int idr) const {
 }
 
 
-Cjt_rejillas::nueva_rejilla
+void Cjt_rejillas::nueva_rejilla() {
+    if (r.leer()) {
+        ++nr;
+        vrej[nr-1] = r;
+    }
+    else
+        cout << "TODO IMPRIMIR ERROR" << endl;
+    // TODO imprimir nº rejillas
+}
 
 
-Cjt_rejillas::
+void Cjt_rejillas::codificar_rejilla(int idr) const {
+    string mensaje;
+    cin >> mensaje;
+    vrej[idr-1].codificar(mensaje);
+}
 
 
 Cjt_rejillas::

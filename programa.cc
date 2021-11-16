@@ -22,7 +22,7 @@ En este ejemplo se construye un programa modular que ofrece un menú de opciones
 int main ()
 {
     Cjt_mensajes cm;
-    cm.leer_conjunto();
+    cm.leer();
     Cjt_rejillas cr;
     cr.leer();
     Cjt_patrones cp;

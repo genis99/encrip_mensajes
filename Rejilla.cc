@@ -4,7 +4,6 @@ Rejilla::Rejilla() {
     n = 0;
     k = 0;
     huecos = vector<vector<pair<int,int>>>(4);
-    valida = false;
 }
 
 void Rejilla::insertar_huecos(const vector<pair<int,int>>& original) {
@@ -23,7 +22,9 @@ vector<pair<int,int>> Rejilla::girar_huecos(const vector<pair<int,int>>& v) {
     return girado;
 }
 
-void Rejilla::calcular_validez() {}
+bool Rejilla::calcular_validez() {
+    return true;
+}
 
 
 int Rejilla::consultar_n() const {
@@ -34,11 +35,7 @@ int Rejilla::consultar_k() const {
     return k;
 }
 
-bool Rejilla::es_valida() const {
-    return true;
-}
-
-void Rejilla::leer() {
+bool Rejilla::leer() {
     cin >> n >> k;
     vector<pair<int,int>> sin_giros(k);
     for (int i = 0; i < k; ++i) {
@@ -47,7 +44,7 @@ void Rejilla::leer() {
         sin_giros[i] = make_pair(p,s);
     }
     insertar_huecos(sin_giros);
-    calcular_validez();
+    return calcular_validez();
 }
 
 void Rejilla::escribir() {
