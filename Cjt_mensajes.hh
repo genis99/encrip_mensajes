@@ -71,7 +71,7 @@ public:
         \post el parametro implicito pasa a tener los atributos leidos del canal
         estandar de entrada.
     */
-    void leer_conjunto();
+    void leer();
     
     /** @brief Escribe el conjunto de mensajes
 

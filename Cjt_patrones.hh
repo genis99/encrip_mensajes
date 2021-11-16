@@ -54,8 +54,8 @@ public:
     
     /** @brief Añade un patron al conjunto 
 
-        \pre hay preparado en el canal estandard d'entrada un entero que representa la
-        dimension del patrondel mensaje y un string que representa el contenido del mensaje
+        \pre hay preparado en el canal estandard d'entrada un arbol en preorder que representa
+        el patron
         \post añade el patron al conjunto y se escribe el numero de patrones en el conjunto
     */
     void nuevo_patron();
@@ -64,8 +64,7 @@ public:
 
         \pre hay preparados en el canal estandard d'entrada un entero que representa
        cuantos patrones leeremos y los datos de esos patrones
-        \post el parametro implicito pasa a tener los atributos leidos del canal
-       estandar de entrada.
+        \post el conjunto pasa a tener los patrones leidos
     */
     void leer();
     

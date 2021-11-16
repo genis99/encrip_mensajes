@@ -35,6 +35,13 @@ private:
     */
     void insertar_huecos(const vector<pair<int,int>>& original);
     
+    /** @brief Gira un vector de huecos
+
+        \pre cierto
+        \post se han girado 90 grados las posiciones de los huecos
+    */
+    vector<pair<int,int>> girar_huecos(const vector<pair<int,int>>& v);
+    
     /** @brief Calcula la validez de la rejilla.
 
         \pre cierto

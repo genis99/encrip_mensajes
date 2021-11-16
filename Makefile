@@ -4,7 +4,7 @@ program.exe: program.o ParInt.o BinTreeIOParInt.o
 	g++ -o program.exe program.o ParInt.o BinTreeIOParInt.o
 	rm *.o
 
-Cjt_rejillas.o: program.cc ParInt.hh BinTreeIOParInt.hh BinTree.hh
+Cjt_rejillas.o: Cjt_rejillas.cc Cjt_rejillas.hh
 	g++ -c Cjt_rejillas.cc $(OPCIONS)
 
 Rejilla.o: Rejilla.hh Rejilla.cc

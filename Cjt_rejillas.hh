@@ -25,7 +25,6 @@ class Cjt_rejillas {
 private:
     int nr;
     vector<Rejilla> vrej;
-    static const int MAX_NREJ = 20;
     
 public:
     // Constructores
@@ -54,7 +53,7 @@ public:
         \pre cierto
         \post añade al conjunto con idr del numero actual de rejillas
     */
-    void nueva_rejilla(Rejilla& r);
+    void nueva_rejilla();
     
     // Lectura y escriptura
     
