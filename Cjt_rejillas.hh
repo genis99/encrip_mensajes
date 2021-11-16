@@ -57,7 +57,7 @@ public:
     
     // Lectura y escriptura
     
-    /** @brief Lee un mensaje y lo escribe codificado con una rejilla
+    /** @brief Lee un mensaje y un idr. Escribe el mensaje codificado con una rejilla
 
         \pre cierto
         \post se ha escrito el mensaje leido codificado con la rejilla idr

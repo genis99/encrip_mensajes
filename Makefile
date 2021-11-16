@@ -1,17 +1,19 @@
 OPCIONS = -D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-sign-compare -std=c++11
 
-program.exe: program.o ParInt.o BinTreeIOParInt.o
-	g++ -o program.exe program.o ParInt.o BinTreeIOParInt.o
-	rm *.o
+programa.exe: programa.o Cjt_rejillas.o Rejilla.o Cjt_mensajes.o
+	g++ -o programa.o Cjt_rejillas.o Rejilla.o Cjt_mensajes.o
+	
+programa.o: programa.cc Cjt_mensajes.hh Cjt_rejillas.hh Rejilla.hh
+	g++ -c programa.cc $(OPCIONS)
 
-Cjt_rejillas.o: Cjt_rejillas.cc Cjt_rejillas.hh
+Cjt_mensajes.o: Cjt_mensajes.cc Cjt_mensajes.hh
+	g++ -c Cjt_mensajes.cc $(OPCIONS)	
+
+Cjt_rejillas.o: Cjt_rejillas.cc Cjt_rejillas.hh Cjt_mensajes.hh
 	g++ -c Cjt_rejillas.cc $(OPCIONS)
 
-Rejilla.o: Rejilla.hh Rejilla.cc
+Rejilla.o: Rejilla.cc Rejilla.hh
 	g++ -c Rejilla.cc $(OPCIONS)
-
-Patron.o: Patron.cc BinTree.hh Patron.hh
-	g++ -c Patron.cc $(OPCIONS)
 
 clean:
 	rm -vf *.o

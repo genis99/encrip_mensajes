@@ -6,6 +6,7 @@
 
 #ifndef NO_DIAGRAM
 #include <iostream>
+#include <algorithm>
 #include <vector>
 #endif
 using namespace std;
@@ -26,7 +27,13 @@ class Rejilla {
 private:
     int n, k;
     vector<vector<pair<int,int>>> huecos; // 0, 90, 180 y 270 grados
-//     bool valida; TODO borrar
+
+    /** @brief Funcion para el sort de los huecos
+
+        \pre cierto
+        \post devuelve si a > b
+    */
+    static bool comp_pair_int(pair<int,int> a, pair<int,int> b);
     
     /** @brief Añade los huecos girados a partir del original 
 
@@ -42,12 +49,19 @@ private:
     */
     vector<pair<int,int>> girar_huecos(const vector<pair<int,int>>& v);
     
-    /** @brief Calcula la validez de la rejilla.
+    /** @brief Calcula la validez de la dimension de la rejilla
 
         \pre cierto
-        \post indica si el parametro implicito es una rejilla valida o no
+        \post indica si la dimension de la rejilla es valida
     */
-    bool calcular_validez(); 
+    bool validez_dimension(); 
+    
+    /** @brief Calcula la validez de la dimension de la rejilla
+
+        \pre cierto
+        \post indica si la dimension de la rejilla es valida
+    */
+    bool validez_huecos(); 
     
     
 public:
@@ -62,9 +76,6 @@ public:
     Rejilla();
     /* Pre: cierto */
     /* Post: rejilla de identificador 0, dimension 0 y 0 huecos, no valida */
-
-    ~Rejilla();
-    
     
     // Consultores
     
@@ -89,17 +100,32 @@ public:
         \pre hay preparados en el canal estandard d'entrada dos enteros n,k y 
         una secuencia de posiciones(pares de enteros) de long k
         \post el parametro implicito pasa a tener los atributos leidos del canal
-        estandar de entrada y tambien los giros de la rejilla y si devuelve
-        un booleano que indica si la rejilla es valida o no
+        estandar de entrada y tambien los giros de la rejilla ordenados de forma
+        creciente. Devuelve un booleano que indica si la rejilla es valida o no
     */
     bool leer();
     
-    /** @brief Lee una rejilla
+    /** @brief Escribe una rejilla
 
         \pre cierto
         \post se han escrito los atributos del parametro implicito
         en el canal estandard de salida
     */
-    void escribir();
+    void escribir() const;
+    
+    /** @brief Codifica un mensaje y lo imprime
+
+        \pre cierto
+        \post se ha escrito el mensaje encriptado con la rejilla
+    */
+    void codificar(string msj) const;
+    
+    /** @brief Codifica un mensaje y lo imprime si es valido
+
+        \pre cierto
+        \post si el mensaje tiene longitud multiple de n² se ha escrito el mensaje desencriptado
+        utilizando la rejilla, si no, se escribe un mensaje de error
+    */
+    void decodificar(string msj) const;
 };
 #endif

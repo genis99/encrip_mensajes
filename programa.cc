@@ -25,65 +25,80 @@ int main ()
     cm.leer();
     Cjt_rejillas cr;
     cr.leer();
-    Cjt_patrones cp;
-    cp.leer();
+//     Cjt_patrones cp;
+//     cp.leer();
     string comando;
     cin >> comando;
     while (comando != "fin") {
-        if (comando = "nuevo_mensaje") {
-            Cjt_mensajes.nuevo_mensaje();
+        // TODO funcio leer comando per a separar l'string del int
+        if (comando == "nuevo_mensaje" or comando == "nm") {
+            cout << '#' << comando << endl;
+            cm.nuevo_mensaje();
         }
-        else if (comando = "nueva_rejilla") {
-            Cjt_rejillas.nueva_rejilla();
+        else if (comando == "nueva_rejilla" or comando == "nr") {
+            cout << '#' << comando << endl;
+            cr.nueva_rejilla();
         }
-        else if (comando = "nuevo_patron") {
-            Cjt_patrones.nuevo_patron();
+        else if (comando == "nuevo_patron" or comando == "np") {
+            cout << '#' << comando << endl;
+//             cp.nuevo_patron();
         }
-        else if (comando = "borrar_mensaje") {
+        else if (comando == "borra_mensaje" or comando == "bm") {
+            cout << '#' << comando << endl;
             string idm;
             cin >> idm;
-            Cjt_mensajes.borrar_mensaje(idm);
+            cm.borrar_mensaje(idm);
         }
-        else if (comando = "listar_mensajes") {
-            Cjt_mensajes.escribir();
+        else if (comando == "listar_mensajes" or comando == "lm") {
+            cout << '#' << comando << endl;
+            cm.escribir();
         }
-        else if (comando = "listar_rejillas") {
-            Cjt_rejillas.escribir();
+        else if (comando == "listar_rejillas" or comando == "lr") {
+            cout << '#' << comando << endl;
+            cr.escribir();
         }
-        else if (comando = "listar_patrones") {
-            Cjt_patrones.escrbir();
+        else if (comando == "listar_patrones" or comando == "lp") {
+            cout << '#' << comando << endl;
+//             cp.escrbir();
         }
-        else if (comando = "codificar_rejilla") {
-            string mensaje;
+        else if (comando == "codificar_rejilla" or comando == "cr") {
+            
             int idr;
-            Cjt_rejillas.codificar_rejilla(idr);
+            cin >> idr;
+            cout << '#' << comando << ' ' << idr << endl;
+            cr.codificar_rejilla(idr);
         }
-        else if (comando = "codificar_guardado_rejilla") {
+        else if (comando == "codificar_guardado_rejilla" or comando == "cgr") {
+            cout << '#' << comando << endl;
             string idm;
             int idr;
             cin >> idm >> idr;
-            Cjt_rejillas.codificar_guardado_rejilla(idm,idr,cm);
+            cr.codificar_guardado_rejilla(idm,idr,cm);
         }
-        else if (comando = "decodificar_rejilla") {
+        else if (comando == "decodificar_rejilla" or comando == "dr") {
             int idr;
             cin >> idr;
-            Cjt_rejillas.decodificar_rejilla(idr);
+            cout << '#' << comando << ' ' << idr << endl;
+            cr.decodificar_rejilla(idr);
         }
-        else if (comando = "codificar_patron") {
+        else if (comando == "codificar_patron" or comando == "cp") {
+            cout << '#' << comando << endl;
             int idp, b;
             cin >> idp >> b;
-            Cjt_patrones.codificar_patron(idp, b); // TODO
+//             cp.codificar_patron(idp, b); // TODO
         }
-        else if (comando = "codificar_guardado_patron") {
+        else if (comando == "codificar_guardado_patron" or comando == "cgp") {
+            cout << '#' << comando << endl;
             string idm;
             int idp, b;
             cin >> idm >> idp >> b;
-            Cjt_patrones.codificar_guardado_patron(idm, idp, b); // TODO
+//             cp.codificar_guardado_patron(idm, idp, b); // TODO
         }
-        else if (comando = "decodificar_patron") {
+        else if (comando == "decodificar_patron" or comando == "dp") {
+            cout << '#' << comando << endl;
             int idp, b;
             cin >> idp >> b;
-            Cjt_patrones.decodificar_patron(idp, b); // TODO
+//             cp.decodificar_patron(idp, b); // TODO
         }
     }
 }
