@@ -22,6 +22,13 @@ class Cjt_mensajes {
 private:
 
     map<string,string> mensajes;
+    
+    /** @brief Lee el idm y el mensaje
+
+        \pre hay preparado en el canal de entrada un string y una linea de caracteres
+        \post el idm y el m pasan a tener los valores leidos
+    */
+    void leer_msj(string& idm, string& m) const;
 
 public:
     // Constructores

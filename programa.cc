@@ -100,5 +100,6 @@ int main ()
             cin >> idp >> b;
 //             cp.decodificar_patron(idp, b); // TODO
         }
+        cin >> comando;
     }
 }

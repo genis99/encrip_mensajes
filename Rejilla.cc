@@ -7,8 +7,8 @@ Rejilla::Rejilla() {
 }
 
 bool Rejilla::comp_pair_int(pair<int,int> a, pair<int,int> b) {
-    if (a.first > b.first) return true;
-    return a.second > b.second;
+    if (a.first == b.first) return a.second < b.second;
+    return a.first < b.first;
 }
 
 void Rejilla::insertar_huecos(const vector<pair<int,int>>& original) {
@@ -26,7 +26,7 @@ vector<pair<int,int>> Rejilla::girar_huecos(const vector<pair<int,int>>& v) {
     int vSize = v.size();
     vector <pair<int,int>> girado(vSize);
     for (int i = 0; i < vSize; ++i) {
-        girado[i].first = vSize - v[i].second + 1;
+        girado[i].first = n - v[i].second + 1;
         girado[i].second = v[i].first;
     }
     sort(girado.begin(),girado.end(),comp_pair_int);
@@ -43,9 +43,10 @@ bool Rejilla::validez_huecos() {
     for (int i = 0; i < 4 and valida; ++i) {
         for (int j = 0; j < k and valida; ++j) {
             pair<int,int> pos;
+            cout << "CCCCC" << endl;
             pos = huecos[i][j];
-            if (huecos_leidos[pos.first][pos.second]) valida = false;
-            else huecos_leidos[pos.first][pos.second] = true;
+            if (huecos_leidos[pos.first-1][pos.second-1]) valida = false;
+            else huecos_leidos[pos.first-1][pos.second-1] = true;
         }
     }
     return valida;
@@ -66,11 +67,19 @@ bool Rejilla::leer() {
     for (int i = 0; i < k; ++i) {
         int p,s;
         cin >> p >> s;
-        sin_giros[p] = make_pair(p,s);
+        sin_giros[i] = make_pair(p,s);
     }
     if (validez_dimension()) {
         sort(sin_giros.begin(),sin_giros.end(),comp_pair_int);
+        cout << "AAAAA" << endl;
         insertar_huecos(sin_giros);
+        for (int i = 0; i < 4; ++i) {
+            cout << "giro" << i << endl;
+            for (int j = 0; j < k; ++j) {
+                cout << huecos[i][j].first << ' ' << huecos[i][j].second << endl;
+            }
+        }
+        cout << "BBBBB" << endl;
         return validez_huecos();
     }
     return false;
@@ -78,7 +87,6 @@ bool Rejilla::leer() {
 
 void Rejilla::escribir() const {
     for (int i = 0; i < 4; ++i) {
-        cout << "Rejilla " << i + 1 << ':' << endl;
         for (int j = 0; j < k - 1; ++j) {
             cout << '(' << huecos[i][j].first << ','
                 << huecos[i][j].second << ") ";

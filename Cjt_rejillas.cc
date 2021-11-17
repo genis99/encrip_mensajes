@@ -57,5 +57,8 @@ void Cjt_rejillas::leer() {
 }
 
 void Cjt_rejillas::escribir() const {
-    
+    for (int i = 0; i < nr; ++i) {
+        cout << "Rejilla " << i+1 << ':' << endl;
+        vrej[i].escribir();
+    }
 }
