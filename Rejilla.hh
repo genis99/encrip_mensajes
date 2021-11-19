@@ -102,6 +102,7 @@ public:
         \post el parametro implicito pasa a tener los atributos leidos del canal
         estandar de entrada y tambien los giros de la rejilla ordenados de forma
         creciente. Devuelve un booleano que indica si la rejilla es valida o no
+        y, si no lo es, escribe su correspondiente error
     */
     bool leer();
     

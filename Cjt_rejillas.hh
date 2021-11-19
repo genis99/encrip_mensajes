@@ -23,7 +23,6 @@ using namespace std;
 class Cjt_rejillas {
     
 private:
-    int nr;
     vector<Rejilla> vrej;
     
 public:

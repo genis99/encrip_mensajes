@@ -1,5 +1,6 @@
 # Objetos c++
 *.o
+*.exe
 
 # Carpeta generada por doxyfile
 /DOC

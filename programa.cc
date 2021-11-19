@@ -29,22 +29,22 @@ int main ()
 //     cp.leer();
     string comando;
     cin >> comando;
-    while (comando != "fin") {
+    while (cin and comando != "fin") {
         // TODO funcio leer comando per a separar l'string del int
         if (comando == "nuevo_mensaje" or comando == "nm") {
-            cout << '#' << comando << endl;
+            cout << '#' << comando;
             cm.nuevo_mensaje();
         }
         else if (comando == "nueva_rejilla" or comando == "nr") {
-            cout << '#' << comando << endl;
+            cout << '#' << comando;
             cr.nueva_rejilla();
         }
         else if (comando == "nuevo_patron" or comando == "np") {
-            cout << '#' << comando << endl;
+            cout << '#' << comando;
 //             cp.nuevo_patron();
         }
         else if (comando == "borra_mensaje" or comando == "bm") {
-            cout << '#' << comando << endl;
+            cout << '#' << comando;
             string idm;
             cin >> idm;
             cm.borrar_mensaje(idm);

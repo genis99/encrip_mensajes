@@ -43,7 +43,7 @@ bool Rejilla::validez_huecos() {
     for (int i = 0; i < 4 and valida; ++i) {
         for (int j = 0; j < k and valida; ++j) {
             pair<int,int> pos;
-            cout << "CCCCC" << endl;
+//             cout << "CCCCC" << endl;
             pos = huecos[i][j];
             if (huecos_leidos[pos.first-1][pos.second-1]) valida = false;
             else huecos_leidos[pos.first-1][pos.second-1] = true;
@@ -60,9 +60,9 @@ int Rejilla::consultar_k() const {
     return k;
 }
 
-bool Rejilla::leer() {
+bool Rejilla::leer() { // TODO aquesta funcio fa massa coses ?
+    cout << endl;
     cin >> n >> k;
-    cout << "dentro rejilla" << endl;
     vector<pair<int,int>> sin_giros(k);
     for (int i = 0; i < k; ++i) {
         int p,s;
@@ -71,17 +71,22 @@ bool Rejilla::leer() {
     }
     if (validez_dimension()) {
         sort(sin_giros.begin(),sin_giros.end(),comp_pair_int);
-        cout << "AAAAA" << endl;
+//         cout << "AAAAA" << endl;
         insertar_huecos(sin_giros);
-        for (int i = 0; i < 4; ++i) {
-            cout << "giro" << i << endl;
-            for (int j = 0; j < k; ++j) {
-                cout << huecos[i][j].first << ' ' << huecos[i][j].second << endl;
-            }
+//         for (int i = 0; i < 4; ++i) {
+//             cout << "giro" << i << endl;
+//             for (int j = 0; j < k; ++j) {
+//                 cout << huecos[i][j].first << ' ' << huecos[i][j].second << endl;
+//             }
+//         }
+//         cout << "BBBBB" << endl;
+        if(validez_huecos()) return true;
+        else {
+            cout << "error: la rejilla con sus giros no cubre todas las posiciones N x N" << endl;
+            return false;
         }
-        cout << "BBBBB" << endl;
-        return validez_huecos();
     }
+    cout << "error: dimensiones incorrectas de la rejilla" << endl;
     return false;
 }
 

@@ -11,7 +11,11 @@ Cjt_mensajes::Cjt_mensajes() {}
 void Cjt_mensajes::nuevo_mensaje() {
     string idm, mensaje;
     leer_msj(idm, mensaje);
-    mensajes[idm] = mensaje;
+    cout << ' ' << idm << endl;
+    pair<map<string,string>::iterator, bool> ins = mensajes.insert(make_pair(idm,mensaje));
+    if (!ins.second) cout << "error: ya existe un mensaje con ese identificador";
+    else cout << mensajes.size();
+    cout << endl;
 }
 
 void Cjt_mensajes::borrar_mensaje(string idm) {
