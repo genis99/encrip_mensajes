@@ -17,6 +17,9 @@ En este ejemplo se construye un programa modular que ofrece un menú de opciones
 #include "Patron.hh"
 #include "Cjt_patrones.hh"
 
+// TODO mirar quin patro utilitza per imprimir el tamaño y los comandos en general per a veure si es pot fer algo mes elegant
+// TODO 
+
 /** @brief Programa principal para la <em>Encriptación de mensajes</em>.
 */
 int main ()

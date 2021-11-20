@@ -13,14 +13,18 @@ void Cjt_mensajes::nuevo_mensaje() {
     leer_msj(idm, mensaje);
     cout << ' ' << idm << endl;
     pair<map<string,string>::iterator, bool> ins = mensajes.insert(make_pair(idm,mensaje));
-    if (!ins.second) cout << "error: ya existe un mensaje con ese identificador";
-    else cout << mensajes.size();
+    if (ins.second) cout << mensajes.size();
+    else
+        cout << "error: ya existe un mensaje con ese identificador";
     cout << endl;
 }
 
 void Cjt_mensajes::borrar_mensaje(string idm) {
-    if (mensajes.erase(idm) == 0) cout << "ERROR EL MENSAJE NO SE ENCUENTRA EN EL CONJUNTO"; // TODO cambiar
-    else cout << mensajes.size();
+    cout << ' ' << idm << endl;
+    // TODO comentar per que s'entengui que fa
+    if (mensajes.erase(idm) != 0) cout << mensajes.size();
+    else
+        cout << "error: el mensaje no existe";
     cout << endl;
 }
     

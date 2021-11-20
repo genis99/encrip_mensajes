@@ -103,9 +103,13 @@ void Rejilla::escribir() const {
 }
 
 void Rejilla::codificar(string msj) const {
+    // Crear matriz n * n
+    // Rellenar matriz
+    // Leer usando los giros de los huecos
     cout << msj;
 }
 
 void Rejilla::decodificar(string msj) const {
+    // Leer usando los giros de los huecos de forma inversa
     cout << msj;
 }

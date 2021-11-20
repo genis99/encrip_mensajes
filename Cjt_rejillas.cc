@@ -11,8 +11,8 @@ void Cjt_rejillas::nueva_rejilla() {
     Rejilla r;
     if (r.leer()) {
         vrej.push_back(r);
+        cout << vrej.size() << endl;
     }
-    // TODO imprimir nº rejillas
 }
 
 
@@ -34,7 +34,7 @@ void Cjt_rejillas::codificar_guardado_rejilla(string idm, int idr, const Cjt_men
 void Cjt_rejillas::decodificar_rejilla(int idr) const {
     string mensaje;
     cin >> mensaje;
-    if (idr > nr or idr <= 0) 
+    if (idr > vrej.size() or idr <= 0) 
         cout << "error: la rejilla no existe" << endl;
     else  vrej[idr-1].decodificar(mensaje);
 }
@@ -43,7 +43,6 @@ void Cjt_rejillas::leer() {
     int n;
     cin >> n;
     for (int i = 0; i < n; ++i) {
-        ++nr;
         Rejilla r;
         r.leer();
         vrej.push_back(r);
@@ -51,8 +50,9 @@ void Cjt_rejillas::leer() {
 }
 
 void Cjt_rejillas::escribir() const {
-    for (int i = 0; i < nr; ++i) {
+    for (int i = 0; i < vrej.size(); ++i) {
         cout << "Rejilla " << i+1 << ':' << endl;
+        cout << vrej[i].consultar_n() << ' ' << vrej[i].consultar_k() << endl;
         vrej[i].escribir();
     }
 }

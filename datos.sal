@@ -33,11 +33,13 @@ Resistire_4
 "Y la noche no me deje en paz."
 #listar_rejillas
 Rejilla 1:
+4 4
 (1,3) (2,4) (3,2) (4,1)
 (1,2) (2,1) (3,3) (4,4)
 (1,4) (2,3) (3,1) (4,2)
 (1,1) (2,2) (3,4) (4,3)
 Rejilla 2:
+6 9
 (1,3) (1,5) (2,4) (3,1) (4,2) (4,4) (5,1) (5,5) (6,6)
 (1,6) (2,1) (2,5) (3,2) (3,4) (4,1) (5,4) (6,3) (6,5)
 (1,1) (2,2) (2,6) (3,3) (3,5) (4,6) (5,3) (6,2) (6,4)
@@ -61,3 +63,66 @@ error: dimensiones incorrectas de la rejilla
 #nr
 error: la rejilla con sus giros no cubre todas las posiciones N x N
 #nueva_rejilla
+3
+#nr
+4
+#borra_mensaje Resistire_1
+15
+#borra_mensaje vie_en_rose
+error: el mensaje no existe
+#bm vie_en_rose_2
+14
+#lm
+Hotel_California_5
+"So I called up the Captain, "Please bring me my wine". He said, "We haven't had that spirit here since nineteen sixty nine". And still those voices are calling from far away, wake you up in the middle of the night, just to hear them say..."
+Itaca_1
+"Quan surts per fer el viatge cap a Itaca"
+Let_it_be_1
+"When I find myself in times of trouble, Mother Mary comes to me"
+Let_it_be_2
+"Speaking words of wisdom, let it be."
+Qualsevol_nit_1
+"Fa una nit clara i tranquila,"
+Qualsevol_nit_2
+"hi ha la lluna que fa llum,"
+Qualsevol_nit_3
+"els convidats van arribant"
+Qualsevol_nit_4
+"i van omplint tota la casa"
+Qualsevol_nit_5
+"de colors i de perfums."
+Resistire_2
+"Cuando duerma con la soledad."
+Resistire_3
+"Cuando se me cierren las salidas."
+Resistire_4
+"Y la noche no me deje en paz."
+vie_en_rose_1
+"Quand il me prend dans ses bras"
+vie_en_rose_3
+"Je vois la vie en rose"
+#lr
+Rejilla 1:
+4 4
+(1,3) (2,4) (3,2) (4,1)
+(1,2) (2,1) (3,3) (4,4)
+(1,4) (2,3) (3,1) (4,2)
+(1,1) (2,2) (3,4) (4,3)
+Rejilla 2:
+6 9
+(1,3) (1,5) (2,4) (3,1) (4,2) (4,4) (5,1) (5,5) (6,6)
+(1,6) (2,1) (2,5) (3,2) (3,4) (4,1) (5,4) (6,3) (6,5)
+(1,1) (2,2) (2,6) (3,3) (3,5) (4,6) (5,3) (6,2) (6,4)
+(1,2) (1,4) (2,3) (3,6) (4,3) (4,5) (5,2) (5,6) (6,1)
+Rejilla 3:
+4 4
+(1,2) (1,4) (3,2) (3,4)
+(1,1) (1,3) (3,1) (3,3)
+(2,1) (2,3) (4,1) (4,3)
+(2,2) (2,4) (4,2) (4,4)
+Rejilla 4:
+6 9
+(1,1) (1,2) (2,1) (2,5) (3,5) (3,6) (4,3) (4,5) (4,6)
+(1,3) (1,4) (2,2) (2,3) (2,4) (4,4) (5,1) (6,1) (6,2)
+(3,1) (3,2) (3,4) (4,1) (4,2) (5,2) (5,6) (6,5) (6,6)
+(1,5) (1,6) (2,6) (3,3) (5,3) (5,4) (5,5) (6,3) (6,4)

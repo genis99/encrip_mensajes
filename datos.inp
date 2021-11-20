@@ -57,3 +57,11 @@ nr
 nueva_rejilla
 4 4
 1 2 3 2 3 4 1 4
+nr
+6 9
+1 1 1 2 2 1 2 5 3 5 3 6 4 3 4 5 4 6
+borra_mensaje Resistire_1
+borra_mensaje vie_en_rose
+bm vie_en_rose_2
+lm
+lr

@@ -86,10 +86,11 @@ public:
     */
     void leer();
 
-    /** @brief Lee unas cuantas rejillas y las añade al conjunto 
+    /** @brief Escribe las rejillas del conjunto
 
         \pre cierto
         \post se ha escrito el conjunto de rejillas en orden de entrada al conjunto
+        cada una precedida por su tamaña y numero de huecos
     */
     void escribir() const;
 };
