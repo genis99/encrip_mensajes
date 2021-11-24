@@ -30,7 +30,7 @@ void Cjt_rejillas::codificar_rejilla(int idr, string mensaje) const {
 void Cjt_rejillas::codificar_guardado_rejilla(string idm, int idr, const Cjt_mensajes& cm) const {
     if (idr <= vrej.size() and idr > 0) {
         string mensaje = cm.consultar_mensaje_idm(idm);
-        if (mensaje != "") {
+        if (mensaje != "") { // TODO Pot estar malament quan el missatge guardat sigui buit??
             cout << '"';
             vrej[idr-1].codificar(cm.consultar_mensaje_idm(idm));
             cout << '"' << endl;
@@ -40,12 +40,19 @@ void Cjt_rejillas::codificar_guardado_rejilla(string idm, int idr, const Cjt_men
 }
 
 
-void Cjt_rejillas::decodificar_rejilla(int idr) const {
-    string mensaje;
-    cin >> mensaje;
-    if (idr > vrej.size() or idr <= 0) 
-        cout << "error: la rejilla no existe" << endl;
-    else  vrej[idr-1].decodificar(mensaje);
+void Cjt_rejillas::decodificar_rejilla(int idr, string mensaje) const {
+    if (idr <= vrej.size() and idr > 0) {
+        int n = vrej[idr-1].consultar_n();
+        if (mensaje.length() % (n * n) == 0) {
+            cout << '"';
+            vrej[idr-1].decodificar(mensaje);
+            cout << '"' << endl;
+        }
+        else {
+            cout << "error: la dimension del mensaje es inadecuada para la rejilla" << endl;
+        }
+    }
+    else cout << "error: la rejilla no existe" << endl;
 }
 
 void Cjt_rejillas::leer() {

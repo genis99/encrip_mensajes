@@ -85,7 +85,10 @@ int main ()
             int idr;
             cin >> idr;
             cout << '#' << comando << ' ' << idr << endl;
-            cr.decodificar_rejilla(idr);
+            string mensaje;
+            cin.ignore();
+            getline(cin,mensaje);
+            cr.decodificar_rejilla(idr, mensaje);
         }
         else if (comando == "codificar_patron" or comando == "cp") {
             cout << '#' << comando << endl;

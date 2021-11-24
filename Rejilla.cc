@@ -102,24 +102,25 @@ void Rejilla::escribir() const {
 }
 
 void Rejilla::codificar(string msj) const {
-    // Crear matriz n * n
+    // Crear matriz n * n, bloque
     vector < vector<char> > bloque;
-    // Rellenar matriz
+    // Rellenar bloque
     int i, j, l;
     i = j = l = 0;
-    while (l < msj.length()) {
+    int msjLength = msj.length();
+    while (l < msjLength) {
         bloque = vector <vector<char> >(n, vector<char>(n, ' '));
         i = 0;
         while (i < 4) {
             j = 0;
-            while (j < k and l < msj.length()) {
+            while (j < k and l < msjLength) {
                 bloque[huecos[i][j].first-1][huecos[i][j].second-1] = msj[l];
                 ++l;
                 ++j;
             }
             ++i;
         }
-        // Leer la matriz
+        // Escribir bloque
         for (int a = 0; a < n; ++a) {
             for (int b = 0; b < n; ++b) {
                 cout << bloque[a][b];
@@ -129,17 +130,32 @@ void Rejilla::codificar(string msj) const {
 }
 
 void Rejilla::decodificar(string msj) const {
-    // Crear matriz n * n
-    vector < vector<char> > bloque(n,vector<char>(n));
-    // Rellenar matriz
-        for (int i = 0; i < 4; ++i) {
-            for (int j = 0; j < msj.length(); ++j) {
-                bloque[i][j] = msj[i*n+j];
+    int msjLength = msj.length();
+    // Crear bloque n * n
+    vector < vector<char> > bloque;
+    // Rellenar bloque con el mensaje a decodificar
+    int i, j, l;
+    i = j = l = 0;
+    while (l < msjLength) {
+        bloque = vector <vector<char> >(n, vector<char>(n, ' '));
+        i = 0;
+        while (i < n) {
+            j = 0;
+            while (j < n) {
+                bloque[i][j] = msj[l];
+                ++j;
+                ++l;
             }
+            ++i;
         }
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < n; ++j) {
-                cout << bloque[i][j];
+        i = 0;
+        while (i < 4) {
+            j = 0;
+            while (j < k) {
+                cout << bloque[huecos[i][j].first-1][huecos[i][j].second-1];
+                ++j;
             }
+            ++i;
         }
+    }
 }

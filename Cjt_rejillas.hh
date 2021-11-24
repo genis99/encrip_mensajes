@@ -75,7 +75,7 @@ public:
         \pre cierto
         \post se ha escrito el mensaje decodificado con la rejilla idr
     */
-    void decodificar_rejilla(int idr) const;
+    void decodificar_rejilla(int idr, string mensaje) const;
     
     /** @brief Lee unas cuantas rejillas y las añade al conjunto 
 
