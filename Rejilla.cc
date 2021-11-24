@@ -61,7 +61,6 @@ int Rejilla::consultar_k() const {
 }
 
 bool Rejilla::leer() { // TODO aquesta funcio fa massa coses ?
-    cout << endl;
     cin >> n >> k;
     vector<pair<int,int>> sin_giros(k);
     for (int i = 0; i < k; ++i) {
@@ -104,12 +103,43 @@ void Rejilla::escribir() const {
 
 void Rejilla::codificar(string msj) const {
     // Crear matriz n * n
+    vector < vector<char> > bloque(n,vector<char>(n));
     // Rellenar matriz
-    // Leer usando los giros de los huecos
-    cout << msj;
+    int i, j, l;
+    i = j = l = 0;
+    while (l < msj.length()) {
+        i = 0;
+        while (i < 4) {
+            j = 0;
+            while (j < k and l < msj.length()) {
+                bloque[huecos[i][j].first-1][huecos[i][j].second-1] = msj[l];
+                ++l;
+                ++j;
+            }
+            ++i;
+        }
+        // Leer la matriz
+        for (int a = 0; a < n; ++a) {
+            for (int b = 0; b < n; ++b) {
+                cout << bloque[a][b];
+            }
+        }
+    }
+    cout << endl;
 }
 
 void Rejilla::decodificar(string msj) const {
-    // Leer usando los giros de los huecos de forma inversa
-    cout << msj;
+    // Crear matriz n * n
+    vector < vector<char> > bloque(n,vector<char>(n));
+    // Rellenar matriz
+        for (int i = 0; i < 4; ++i) {
+            for (int j = 0; j < msj.length(); ++j) {
+                bloque[i][j] = msj[i*n+j];
+            }
+        }
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                cout << bloque[i][j];
+            }
+        }
 }

@@ -8,6 +8,7 @@ Rejilla Cjt_rejillas::consultar_rejilla_idr(int idr) const {
 
 
 void Cjt_rejillas::nueva_rejilla() {
+    cout << endl;
     Rejilla r;
     if (r.leer()) {
         vrej.push_back(r);
@@ -18,15 +19,20 @@ void Cjt_rejillas::nueva_rejilla() {
 
 void Cjt_rejillas::codificar_rejilla(int idr) const {
     string mensaje;
-    cin >> mensaje;
+    cin.ignore();
+    getline(cin,mensaje);
     if (idr <= vrej.size() and idr > 0) vrej[idr-1].codificar(mensaje);
     else cout << "error: la rejilla no existe" << endl;
 }
 
 
 void Cjt_rejillas::codificar_guardado_rejilla(string idm, int idr, const Cjt_mensajes& cm) const {
-    if (idr <= vrej.size() and idr > 0) 
-        vrej[idr-1].codificar(cm.consultar_mensaje_idm(idm));
+    if (idr <= vrej.size() and idr > 0) {
+        cout << '"';
+        cout << cm.consultar_mensaje_idm(idm) << endl;
+//         vrej[idr-1].codificar(cm.consultar_mensaje_idm(idm));
+        cout << '"';
+    }
     else cout << "error: la rejilla no existe" << endl;
 }
 

@@ -18,7 +18,7 @@ En este ejemplo se construye un programa modular que ofrece un menú de opciones
 #include "Cjt_patrones.hh"
 
 // TODO mirar quin patro utilitza per imprimir el tamaño y los comandos en general per a veure si es pot fer algo mes elegant
-// TODO 
+// TODO comentar el codi cc
 
 /** @brief Programa principal para la <em>Encriptación de mensajes</em>.
 */
@@ -65,7 +65,6 @@ int main ()
 //             cp.escrbir();
         }
         else if (comando == "codificar_rejilla" or comando == "cr") {
-            
             int idr;
             cin >> idr;
             cout << '#' << comando << ' ' << idr << endl;

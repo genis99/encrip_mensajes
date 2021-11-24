@@ -30,8 +30,13 @@ void Cjt_mensajes::borrar_mensaje(string idm) {
     
 string Cjt_mensajes::consultar_mensaje_idm(string idm) const {
     map<string,string>::const_iterator it = mensajes.find(idm);
-    if (it == mensajes.end()) cout << "ERROR MENSAJE NO ENCONTRADO" << endl; // TODO cambiar
-    else return it->second;
+    if (it == mensajes.end()) {
+        cout << "ERROR MENSAJE NO ENCONTRADO" << endl; // TODO cambiar
+        return "";
+    }
+    else {
+        cout << it->second;
+    }
     return "";
 }
 
@@ -41,8 +46,8 @@ void Cjt_mensajes::leer() {
     string idm, mensaje;
     for (int i = 0; i < n; ++i) {
         leer_msj(idm,mensaje);
-        cout << idm << ' ' << mensaje << endl; // TODO borrar
-        mensajes[idm] = mensaje;
+//         cout << idm << ' ' << mensaje << endl; // TODO borrar
+        mensajes.insert(make_pair(idm,mensaje));
     }
 }
 
