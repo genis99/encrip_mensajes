@@ -61,7 +61,7 @@ public:
         \pre cierto
         \post se ha escrito el mensaje leido codificado con la rejilla idr
     */
-    void codificar_rejilla(int idr) const;
+    void codificar_rejilla(int idr, string mensaje) const;
     
     /** @brief Codifica un mensaje del conjunto de mensajes con una rejilla y se escribe
 

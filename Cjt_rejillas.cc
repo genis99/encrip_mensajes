@@ -17,21 +17,24 @@ void Cjt_rejillas::nueva_rejilla() {
 }
 
 
-void Cjt_rejillas::codificar_rejilla(int idr) const {
-    string mensaje;
-    cin.ignore();
-    getline(cin,mensaje);
-    if (idr <= vrej.size() and idr > 0) vrej[idr-1].codificar(mensaje);
+void Cjt_rejillas::codificar_rejilla(int idr, string mensaje) const {
+    if (idr <= vrej.size() and idr > 0){
+        cout << '"';
+        vrej[idr-1].codificar(mensaje);
+        cout << '"' << endl;
+    }
     else cout << "error: la rejilla no existe" << endl;
 }
 
 
 void Cjt_rejillas::codificar_guardado_rejilla(string idm, int idr, const Cjt_mensajes& cm) const {
     if (idr <= vrej.size() and idr > 0) {
-        cout << '"';
-        cout << cm.consultar_mensaje_idm(idm) << endl;
-//         vrej[idr-1].codificar(cm.consultar_mensaje_idm(idm));
-        cout << '"';
+        string mensaje = cm.consultar_mensaje_idm(idm);
+        if (mensaje != "") {
+            cout << '"';
+            vrej[idr-1].codificar(cm.consultar_mensaje_idm(idm));
+            cout << '"' << endl;
+        }
     }
     else cout << "error: la rejilla no existe" << endl;
 }

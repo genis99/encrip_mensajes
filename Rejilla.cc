@@ -103,11 +103,12 @@ void Rejilla::escribir() const {
 
 void Rejilla::codificar(string msj) const {
     // Crear matriz n * n
-    vector < vector<char> > bloque(n,vector<char>(n));
+    vector < vector<char> > bloque;
     // Rellenar matriz
     int i, j, l;
     i = j = l = 0;
     while (l < msj.length()) {
+        bloque = vector <vector<char> >(n, vector<char>(n, ' '));
         i = 0;
         while (i < 4) {
             j = 0;
@@ -125,7 +126,6 @@ void Rejilla::codificar(string msj) const {
             }
         }
     }
-    cout << endl;
 }
 
 void Rejilla::decodificar(string msj) const {

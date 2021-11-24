@@ -67,3 +67,18 @@ lm
 lr
 codificar_rejilla 1
 Hola, amigo, que tal?
+codificar_rejilla 5
+Hola, amigo, que tal?
+cr 2
+Hola, amigo, que tal?
+codificar_guardado_rejilla Let_it_be_1 4
+cgr Let_it_be_3 1
+cgr vie_en_rose_1 3
+cgr vie_en_rose_1 0
+codificar_guardado_rejilla Qualsevol_nit_1 4
+cgr Qualsevol_nit_1 1
+cgr Resistire_2 2
+cgr Resistire_2 3
+cgr Itaca_1 2
+cgr Hotel_California_5 4
+cgr Hotel_California_5 1

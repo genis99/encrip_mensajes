@@ -31,13 +31,12 @@ void Cjt_mensajes::borrar_mensaje(string idm) {
 string Cjt_mensajes::consultar_mensaje_idm(string idm) const {
     map<string,string>::const_iterator it = mensajes.find(idm);
     if (it == mensajes.end()) {
-        cout << "ERROR MENSAJE NO ENCONTRADO" << endl; // TODO cambiar
+        cout << "error: el mensaje no existe" << endl; // TODO cambiar
         return "";
     }
     else {
-        cout << it->second;
+        return it->second;
     }
-    return "";
 }
 
 void Cjt_mensajes::leer() {

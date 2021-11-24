@@ -67,14 +67,18 @@ int main ()
         else if (comando == "codificar_rejilla" or comando == "cr") {
             int idr;
             cin >> idr;
+            string mensaje;
+            cin.ignore();
+            getline(cin,mensaje);
             cout << '#' << comando << ' ' << idr << endl;
-            cr.codificar_rejilla(idr);
+            cr.codificar_rejilla(idr, mensaje);
         }
         else if (comando == "codificar_guardado_rejilla" or comando == "cgr") {
-            cout << '#' << comando << endl;
+            cout << '#' << comando;
             string idm;
             int idr;
             cin >> idm >> idr;
+            cout << ' ' << idm << ' ' << idr << endl;
             cr.codificar_guardado_rejilla(idm,idr,cm);
         }
         else if (comando == "decodificar_rejilla" or comando == "dr") {
