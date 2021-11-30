@@ -4,8 +4,8 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = utf-8
-PROJECT_NAME           = "Laboratorio de PRO2"
-PROJECT_NUMBER         = "version 2 30-nov-2021"
+PROJECT_NAME           = "Laboratorio de PRO2. Practica 'Encriptacion de mensajes'."
+PROJECT_NUMBER         = "version 1 11-nov-2021"
 OUTPUT_DIRECTORY       = "./DOC"
 CREATE_SUBDIRS         = NO
 OUTPUT_LANGUAGE        = Spanish
@@ -98,7 +98,7 @@ INPUT_ENCODING         = utf-8
 FILE_PATTERNS          = *.hpp \ *.hh \
                          main*.cpp \ main*.cc \
                          pro2*.cpp \ pro2*.cc \
-			 program.cpp \ program.cc \
+			 program.cpp \ program.cc \ programa.cc \
                          principal*.cpp \ principal*.cc
 RECURSIVE              = NO
 EXCLUDE                = *~ \ BinTree.hh

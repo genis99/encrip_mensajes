@@ -1,7 +1,7 @@
 /**
  * @mainpage Encriptación de mensajes
  
-En este ejemplo se construye un programa modular que ofrece un menú de opciones para gestionar una lavadora. Se introducen las clases <em>Cjt_mensajes</em>, <em>Cjt_rejillas</em>, <em>Cjt_patrones</em>, <em>Mensaje</em>, <em>Rejilla</em> y <em>Patron</em>
+En este ejemplo se construye un programa modular que ofrece un menú de opciones para encriptar mensajes. Se introducen las clases <em>Cjt_mensajes</em>, <em>Cjt_rejillas</em>, <em>Cjt_patrones</em>, <em>Rejilla</em> y <em>Patron</em>
 
 */
 
@@ -16,6 +16,9 @@ En este ejemplo se construye un programa modular que ofrece un menú de opciones
 #include "Cjt_rejillas.hh"
 #include "Patron.hh"
 #include "Cjt_patrones.hh"
+#ifndef NO_DIAGRAM
+#include "BinTree.hh"
+#endif
 
 // TODO mirar quin patro utilitza per imprimir el tamaño y los comandos en general per a veure si es pot fer algo mes elegant
 // TODO comentar el codi cc

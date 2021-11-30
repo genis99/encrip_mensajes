@@ -5,6 +5,7 @@
 #define CJT_PATRONES_HH
 
 #include "Patron.hh"
+#include "Cjt_mensajes.hh"
 
 #ifndef NO_DIAGRAM
 #include <iostream>

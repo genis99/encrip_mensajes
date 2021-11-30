@@ -23,7 +23,21 @@ using namespace std;
 class Patron {
     
 private:
-    BinTree<int> patron;
+    BinTree<int> pat;
+
+    /** @brief Lee el arbol de un patron (funcion auxiliar recursiva)
+
+        \pre cierto
+        \post el parametro implicito b pasa a ser el arbol leido
+    */
+    void read_bintree_int(BinTree<int>& a);
+    
+    /** @brief Escribe el arbol de un patron (funcion auxiliar recursiva)
+
+        \pre cierto
+        \post se ha escrito el arbol patron
+    */
+    void write_bintree_int(const BinTree<int> &a);
     
 public:
     // Constructores
@@ -43,7 +57,7 @@ public:
         \pre cierto
         \post el resultado es el arbol binario patron del parametro implicito
     */
-    BinTree<int> consultar_patron() const;
+    Patron consultar_patron() const;
 
     // Lectura y escriptura
     
