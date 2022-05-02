@@ -11,9 +11,9 @@ En este ejemplo se construye un programa modular que ofrece un menú de opciones
 
 // para que el diagrama modular quede bien se han escrito includes redundantes;
 // en los ficheros .hh de la documentación de las clases ocurre lo mismo.
-#include "Cjt_mensajes.hh"
 #include "Rejilla.hh"
 #include "Cjt_rejillas.hh"
+#include "Cjt_mensajes.hh"
 #include "Patron.hh"
 #include "Cjt_patrones.hh"
 #ifndef NO_DIAGRAM
@@ -31,8 +31,8 @@ int main ()
     cm.leer();
     Cjt_rejillas cr;
     cr.leer();
-//     Cjt_patrones cp;
-//     cp.leer();
+    Cjt_patrones cp;
+    cp.leer();
     string comando;
     cin >> comando;
     while (cin and comando != "fin") {

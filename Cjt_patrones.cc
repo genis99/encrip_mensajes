@@ -11,3 +11,4 @@ void Cjt_patrones::nuevo_patron() {
     p.leer();
     
 }
+
